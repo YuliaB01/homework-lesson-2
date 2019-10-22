@@ -1,5 +1,5 @@
 import React from 'react';
-import {PostListItem} from './postListItem';
+import {PostListItem} from '../PostListItem/postListItem';
 import T from 'prop-types';
 
 export const PostList = ({posts, postsLimit}) => {
@@ -11,7 +11,7 @@ export const PostList = ({posts, postsLimit}) => {
                 <PostListItem key={post.id} id={post.id} title={post.title} body={post.body}/>
             )
         } else {
-            return <div className="loader">No data</div>;
+            return <div className="noDataFound">No data</div>;
         }
     };
 

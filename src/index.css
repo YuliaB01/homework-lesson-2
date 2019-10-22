@@ -16,7 +16,8 @@ code {
     monospace;
 }
 
-.loader {
+.loader,
+.noDataFound {
   position: absolute;
   top: 0;
   right: 0;

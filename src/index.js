@@ -1,10 +1,10 @@
+import './index.css';
 import React, {useEffect, useState, Fragment} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import {PostList} from './postList';
-import {Loader} from './loader';
-import {MoreButton} from './button';
-import {Header} from './header';
+import {PostList} from './PostList/postList';
+import {Loader} from './common/loader';
+import {MoreButton} from './common/button';
+import {Header} from './Header/header';
 
 const App = () => {
     const [postList, setPostList] = useState([]);
@@ -22,7 +22,7 @@ const App = () => {
 
     useEffect(() => {
         if (!isLoaded) {
-          fetchData();
+            fetchData();
         }
     }, [isLoaded]);
 
@@ -43,9 +43,9 @@ const App = () => {
 
     return (
         <Fragment>
-            <Header title={"Today's posts"}/>
+            <Header title={'Today\'s posts'}/>
             {!isLoaded ? <Loader/> : <PostList posts={postList} postsLimit={sizeLimit}/>}
-            {sizeLimit < postList.length ? <MoreButton onClick={onButtonClick}/> : null}
+            {sizeLimit < postList.length ? <MoreButton name={'Load more'} onClick={onButtonClick}/> : null}
         </Fragment>
     );
 };
