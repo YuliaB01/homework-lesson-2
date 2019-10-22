@@ -1,5 +1,5 @@
 import React from 'react';
-import {PostListItem} from '../PostListItem/postListItem';
+import {PostListItem} from './postListItem';
 import T from 'prop-types';
 
 export const PostList = ({posts, postsLimit}) => {

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import {PostList} from './PostList/postList';
 import {Loader} from './common/loader';
 import {MoreButton} from './common/button';
-import {Header} from './Header/header';
+import {Header} from './common/header';
 
 const App = () => {
     const [postList, setPostList] = useState([]);
