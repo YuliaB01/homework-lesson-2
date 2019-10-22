@@ -12,8 +12,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .loader,
@@ -41,6 +40,8 @@ code {
 
 .postsList {
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .postListItem {
@@ -69,17 +70,36 @@ code {
   outline: none;
 }
 
+.searchWrapper {
+  margin-bottom: 20px;
+}
+
+.searchWrapper input {
+  padding: 10px 20px;
+  width: 300px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.searchWrapper input::placeholder {
+  font-size: 15px;
+}
+
+.searchWrapper input:focus {
+  outline: none;
+  border: 1px solid #3796d8;
+}
+
 article div {
-  text-indent: 10px;
   font-weight: 300;
 }
 
 article div:first-letter {
-  font-size: 24px;
-  font-weight: 300;
+  text-transform: uppercase;
 }
 
 article h4 {
-  margin: 0;
+  margin: 0 0 10px 0;
   line-height: 1.5;
 }

@@ -7,8 +7,8 @@ export const PostList = ({posts, postsLimit}) => {
         if (posts && posts.length) {
             let postsToShow = posts.slice(0, postsLimit);
 
-            return postsToShow.map(post =>
-                <PostListItem key={post.id} id={post.id} title={post.title} body={post.body}/>
+            return postsToShow.map((post, index) =>
+                <PostListItem key={post.id} index={index} id={post.id} title={post.title} body={post.body}/>
             )
         } else {
             return <div className="noDataFound">No data</div>;
@@ -16,14 +16,18 @@ export const PostList = ({posts, postsLimit}) => {
     };
 
     return (
-        <ol className='postsList'>
+        <ul className='postsList'>
             {renderPosts()}
-        </ol>
+        </ul>
     );
 };
 
 PostList.defaultProps = {posts: []};
 PostList.propTypes = {
-    posts: T.arrayOf(T.exact),
-    postsLimit: T.number
+    posts: T.arrayOf(T.shape({
+        id: T.number.isRequired,
+        title: T.string.isRequired,
+        body: T.string.isRequired
+    })),
+    postsLimit: T.number.isRequired
 };
